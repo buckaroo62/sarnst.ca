@@ -1,0 +1,10 @@
+{% extends "base.njk" %}
+{% block content %}
+<section>
+    <span class="icon solid major fa-film"></span>
+    {{ content | safe }}
+    <ul class="actions">
+        <li><a href="/two_d" class="button">{{ buttontext }}</a></li>
+    </ul>
+</section>
+{% endblock content %}

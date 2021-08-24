@@ -1,33 +1,17 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Programming</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload"  onload="whenReady()" >
-		<!-- Header -->
-		<header id="header">
-            <a href="index.html" class="title">Programming</a>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                </ul>
-            </nav>
-        </header>
-		<!-- Wrapper -->
-        <div id="wrapper">
-            <!-- Main -->
-            <section id="main" class="wrapper">
-                <div class="inner">
+---
+layout: "altbase.njk"
+title: Programming
+usecode: true
+startcode: "whenReady()"
+---
+<script src="/assets/js/tesseract.js"></script>
+<canvas id="canvas3d" width="500" height="400"></canvas>
+Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.
 
-			        <script src="/assets/js/tesseract.js"></script>
-<p><canvas id="canvas3d" width="500" height="400"></canvas>
-Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-<pre><code class="language-javascript">// A simple tesseract
+Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.
+
+```javascript
+// A simple tesseract
 class Tesseract {
     constructor (win) {
         this.win = win;
@@ -35,7 +19,7 @@ class Tesseract {
         this.tess = [];
 
         // Go ahead and fill those vertices
-        for (let i = 0; i &lt; 16; i++) {
+        for (let i = 0; i < 16; i++) {
             this.tess.push(this.bits_to_coords(i));
         }
     }
@@ -43,10 +27,10 @@ class Tesseract {
     // create the coordinates for a tesseract 
     // from the bits while we count
     bits_to_coords(n) {
-        let x = (n &amp; 1) ? 1 : -1;
-        let y = (n &amp; 2) ? 1 : -1;
-        let z = (n &amp; 4) ? 1 : -1;
-        let w = (n &amp; 8) ? 1 : -1;
+        let x = (n & 1) ? 1 : -1;
+        let y = (n & 2) ? 1 : -1;
+        let z = (n & 4) ? 1 : -1;
+        let w = (n & 8) ? 1 : -1;
         return new Array(x, y, z, w);
     }
 
@@ -83,7 +67,7 @@ class Tesseract {
             projected.push(i);                      // And add them to the list of projected vertices
         });
 
-        for (let p = 0; p &lt; projected.length; p++) {
+        for (let p = 0; p < projected.length; p++) {
             drawVertices(projected[p][0], projected[p][1], [255, 255, 255]);
         }
 
@@ -91,7 +75,7 @@ class Tesseract {
         this.draw4Dfaces(projected);
         angle += 1;
 
-        if (angle &gt;= 360) {
+        if (angle >= 360) {
             angle = 0;
         }
     }
@@ -253,23 +237,23 @@ class Tesseract {
         a = b = c = d = [];
         disp.forEach (function (face, index) {
             let colour = [];
-            if (index &lt; 4) {
+            if (index < 4) {
                 // First four faces are coloured red
                 colour = [200, 0, 0, 60];
             } else {
-                if (index &lt; 8) {
+                if (index < 8) {
                     // next 4 faces are coloured yellow
                     colour = [200, 200, 0, 60];
                 } else {
-                    if (index &lt; 11) {
+                    if (index < 11) {
                         // Next four faces are coloured green
                         colour = [0, 200, 0, 60];
                     } else {
-                        if (index &lt; 16) {
+                        if (index < 16) {
                             // Next four faces are coloured cyan
                             colour = [0, 200, 200, 60];
                         } else {
-                            if (index &lt; 20) {
+                            if (index < 20) {
                                 // The next four faces are coloured blue
                                 colour = [0, 0, 200, 60];
                             } else {
@@ -302,9 +286,9 @@ let angle = 30;
 
 // Draws a little circle around the vertex
 function drawVertices (x, y, colour) {
-    let colourString = &quot;#&quot; + colour[0].toString().padStart(2, &quot;0&quot;);
-    colourString += colour[1].toString(16).padStart(2, &quot;0&quot;); 
-    colourString += colour[2].toString(16).padStart(2, &quot;0&quot;);
+    let colourString = "#" + colour[0].toString().padStart(2, "0");
+    colourString += colour[1].toString(16).padStart(2, "0"); 
+    colourString += colour[2].toString(16).padStart(2, "0");
     win_context.beginPath();
     win_context.arc(x, y, 2, 2 * Math.PI, false);
     win_context.lineWidth = '1';
@@ -314,9 +298,9 @@ function drawVertices (x, y, colour) {
 
 // This is the start of our line drawing function
 function drawLine (x1, y1, x2, y2, colour) {
-    let colourString = &quot;#&quot; + colour[0].toString(16).padStart(2, &quot;0&quot;);
-    colourString += colour[1].toString(16).padStart(2, &quot;0&quot;); 
-    colourString += colour[2].toString(16).padStart(2, &quot;0&quot;);
+    let colourString = "#" + colour[0].toString(16).padStart(2, "0");
+    colourString += colour[1].toString(16).padStart(2, "0"); 
+    colourString += colour[2].toString(16).padStart(2, "0");
     win_context.beginPath();
     win_context.lineWidth = '1';
     win_context.strokeStyle = colourString;
@@ -327,10 +311,10 @@ function drawLine (x1, y1, x2, y2, colour) {
 
 // And this is the fully javascript version of the face drawing function
 function drawFilledQuad (x1, y1, x2, y2, x3, y3, x4, y4, colour) {
-    let colourString = &quot;#&quot; + colour[0].toString(16).padStart(2, &quot;0&quot;); 
-    colourString += colour[1].toString(16).padStart(2, &quot;0&quot;); 
-    colourString += colour[2].toString(16).padStart(2, &quot;0&quot;);
-    colourString += colour[3].toString(16).padStart(2, &quot;0&quot;);
+    let colourString = "#" + colour[0].toString(16).padStart(2, "0"); 
+    colourString += colour[1].toString(16).padStart(2, "0"); 
+    colourString += colour[2].toString(16).padStart(2, "0");
+    colourString += colour[3].toString(16).padStart(2, "0");
     win_context.beginPath();
     win_context.fillStyle = colourString; 
     win_context.moveTo(x1, y1);
@@ -342,7 +326,7 @@ function drawFilledQuad (x1, y1, x2, y2, x3, y3, x4, y4, colour) {
 
 // Multiply a vertex with a scale factor
 function vert_scale_mult (v, sf) {
-    for (let i = 0; i &lt; v.length; i++) {
+    for (let i = 0; i < v.length; i++) {
         v[i] *= sf;
     }
     return v;
@@ -350,7 +334,7 @@ function vert_scale_mult (v, sf) {
 
 // Turn a vertex sideways to be a matrix
 // We need to do this to multiply them
-// A &quot;vertex&quot; looks like this:
+// A "vertex" looks like this:
 // vertex[x, y, z, w]
 // but we want it to be:
 // matrix [
@@ -361,7 +345,7 @@ function vert_scale_mult (v, sf) {
 // ]
 function vert_to_matrix(vert) {
     let m = [];
-    for (let i = 0; i &lt; vert.length; i++) {
+    for (let i = 0; i < vert.length; i++) {
         m.push([vert[i]]);
     }
     return m;
@@ -391,13 +375,13 @@ function mat_mul (a, b) {
     colB = b[0].length;
 
     let result = [];
-    for (let t = 0; t &lt; 4; t++) {
+    for (let t = 0; t < 4; t++) {
         result.push([0, 0, 0, 0]);
     }
 
-    for (let i = 0; i &lt; rowA; i++) {
-        for (let j = 0; j &lt; colB; j++) {
-            for (k = 0; k &lt; rowB; k++) {
+    for (let i = 0; i < rowA; i++) {
+        for (let j = 0; j < colB; j++) {
+            for (k = 0; k < rowB; k++) {
                 result[i][j] += a[i][k] * b[k][j];
             }
         }
@@ -408,8 +392,8 @@ function mat_mul (a, b) {
 // And a function that starts everything going
 function whenReady () {
     // First, lets start with some js specific code, that will address the html file that we put this into
-    win = document.getElementById(&quot;canvas3d&quot;);	// win is the window of the canvas
-    win_context = win.getContext(&quot;2d&quot;);			// an object that gets us information about the win
+    win = document.getElementById("canvas3d");	// win is the window of the canvas
+    win_context = win.getContext("2d");			// an object that gets us information about the win
 
     // Create a new tesseract object
     tess = new Tesseract(win);
@@ -419,28 +403,4 @@ function whenReady () {
         tess.doTesseract();
     }, 30, tess);
 }
-</code></pre>
-
-
-                </div>
-            </section>
-        </div>
-		<!-- Footer -->
-		<footer id="footer" class="wrapper style1-alt">
-			<div class="inner">
-				<ul class="menu">
-					<li>&copy; Sheldon Arnst. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
-		</footer>
-
-		<!-- Scripts -->
-		<script src="/assets/js/jquery.min.js"></script>
-		<script src="/assets/js/jquery.scrollex.min.js"></script>
-		<script src="/assets/js/jquery.scrolly.min.js"></script>
-		<script src="/assets/js/browser.min.js"></script>
-		<script src="/assets/js/breakpoints.min.js"></script>
-		<script src="/assets/js/util.js"></script>
-		<script src="/assets/js/main.js"></script>
-	</body>
-</html>
+```
