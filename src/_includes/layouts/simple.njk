@@ -15,15 +15,14 @@ aboutme: "I have had a long career in the animation field, and have worked on so
 ---
 {% extends "base.njk" %}
 {% block content %}
-                <!--
-                <section>
-                    <span class="icon solid major fa-film"></span>
-                -->
-                    {{ content | safe }}
-                <!--
-                    <ul class="actions">
-                        <li><a href="/two_d" class="button">{{ buttontext }}</a></li>
-                    </ul>
-                </section>
-                -->
+    {% for portfolio in collections.portfolios %}
+							<section>
+								<span class="icon solid major fa-{{ portfolio.data.faIcon }}"></span>
+								<h3>{{ portfolio.data.title }}</h3>
+								<p>{{ portfolio.data.description }}</p>
+								<ul class="actions">
+									<li><a href="/{{ portfolio.data.link }}" class="button">{{ buttontext }}</a></li>
+								</ul>
+							</section>
+    {% endfor %}
 {% endblock content %}
