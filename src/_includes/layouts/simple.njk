@@ -1,10 +1,29 @@
+---
+title: Sheldon Arnst
+owner: Sheldon Arnst
+sidebar:
+  - url: intro
+    text: "Welcome"
+  - url: one
+    text: "Who I Am"
+  - url: two
+    text: "What I like to do"
+  - url: three
+    text: "Get in touch"
+buttontext: "Details"
+aboutme: "I have had a long career in the animation field, and have worked on some great project and with the best people in the industry."
+---
 {% extends "base.njk" %}
 {% block content %}
-<section>
-    <span class="icon solid major fa-film"></span>
-    {{ content | safe }}
-    <ul class="actions">
-        <li><a href="/two_d" class="button">{{ buttontext }}</a></li>
-    </ul>
-</section>
+                <!--
+                <section>
+                    <span class="icon solid major fa-film"></span>
+                -->
+                    {{ content | safe }}
+                <!--
+                    <ul class="actions">
+                        <li><a href="/two_d" class="button">{{ buttontext }}</a></li>
+                    </ul>
+                </section>
+                -->
 {% endblock content %}
