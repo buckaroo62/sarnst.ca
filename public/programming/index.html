@@ -6,14 +6,41 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		<style>
+			.dropdown {
+			position: relative;
+			display: inline-block;
+			}
+
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #b74e91;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			padding: 12px;
+			z-index: 1;
+			}
+
+			.dropdown:hover .dropdown-content {
+			display: block;
+			}
+		</style>
 	</head>
 	<body class="is-preload"  onload="whenReady()" >
 		<!-- Header -->
 		<header id="header">
             <a href="index.html" class="title">Programming</a>
+			<div class="dropdown">
+			</div>
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
+					<li><a href="/super">Directing</a></li>
+					<li><a href="/two_d">2D Animation</a></li>
+					<li><a href="/three_d">3D Animation</a></li>
+					<li><a href="/drawing">Drawings</a></li>
+					<li><a href="/programming">Programming</a></li>
                 </ul>
             </nav>
         </header>
@@ -24,9 +51,10 @@
                 <div class="inner">
 
 			        <script src="/assets/js/tesseract.js"></script>
-<p><canvas id="canvas3d" width="500" height="400"></canvas>
-Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+<p><canvas id="canvas3d" width="500" height="400"></canvas></p>
+<p>I program in C, C++, Python, PHP, Javascript and a number of languages that are long forgotten.
+This is just an example of a little &quot;toy&quot; that I wrote for fun. A tesseract, is to a cube, as a cube is to a square. It is a fundamental 4 dimensional piece of geometry. Then, I set it to rotate on all of the six axes that it has. It's interesting, I think, because while it appears to be a cube within a cube, all of the sides are the same length! They appear to grow and shrink as they get closer to you, just like a cube does, but it looks inside out.</p>
+<p>If you are interested, I have placed the code for it below.</p>
 <pre><code class="language-javascript">// A simple tesseract
 class Tesseract {
     constructor (win) {
@@ -407,9 +435,10 @@ function mat_mul (a, b) {
 
 // And a function that starts everything going
 function whenReady () {
-    // First, lets start with some js specific code, that will address the html file that we put this into
-    win = document.getElementById(&quot;canvas3d&quot;);	// win is the window of the canvas
-    win_context = win.getContext(&quot;2d&quot;);			// an object that gets us information about the win
+    // First, lets start with some js specific code,
+    // that will address the html file that we put this into
+    win = document.getElementById(&quot;canvas3d&quot;);  // win is the window of the canvas
+    win_context = win.getContext(&quot;2d&quot;);         // an object that gets us information about the win
 
     // Create a new tesseract object
     tess = new Tesseract(win);

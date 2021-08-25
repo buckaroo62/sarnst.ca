@@ -6,9 +6,11 @@ startcode: "whenReady()"
 ---
 <script src="/assets/js/tesseract.js"></script>
 <canvas id="canvas3d" width="500" height="400"></canvas>
-Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.
 
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.
+I program in C, C++, Python, PHP, Javascript and a number of languages that are long forgotten.
+This is just an example of a little "toy" that I wrote for fun. A tesseract, is to a cube, as a cube is to a square. It is a fundamental 4 dimensional piece of geometry. Then, I set it to rotate on all of the six axes that it has. It's interesting, I think, because while it appears to be a cube within a cube, all of the sides are the same length! They appear to grow and shrink as they get closer to you, just like a cube does, but it looks inside out.
+
+If you are interested, I have placed the code for it below.
 
 ```javascript
 // A simple tesseract
@@ -391,9 +393,10 @@ function mat_mul (a, b) {
 
 // And a function that starts everything going
 function whenReady () {
-    // First, lets start with some js specific code, that will address the html file that we put this into
-    win = document.getElementById("canvas3d");	// win is the window of the canvas
-    win_context = win.getContext("2d");			// an object that gets us information about the win
+    // First, lets start with some js specific code,
+    // that will address the html file that we put this into
+    win = document.getElementById("canvas3d");  // win is the window of the canvas
+    win_context = win.getContext("2d");         // an object that gets us information about the win
 
     // Create a new tesseract object
     tess = new Tesseract(win);
