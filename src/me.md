@@ -1,5 +1,5 @@
 ---
-layout: "altbase.njk"
+layout: "/layouts/simple.njk"
 title: Me
 ---
 

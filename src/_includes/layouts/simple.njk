@@ -16,7 +16,6 @@ sidebar:
   - url: three
     text: "Get in touch"
 buttontext: "Details"
-aboutme: "I have had a long career in the animation field, and have worked on some great projects and with the best people in the industry."
 ---
 {% extends "base.njk" %}
 {% block content %}
@@ -24,7 +23,7 @@ aboutme: "I have had a long career in the animation field, and have worked on so
 							<section>
 								<span class="icon solid major fa-{{ portfolio.data.faIcon }}"></span>
 								<h3>{{ portfolio.data.title }}</h3>
-								<p>{{ portfolio.data.description }}</p>
+								<!-- <p>{{ portfolio.data.description }}</p> -->
 								<ul class="actions">
 									<li><a href="/{{ portfolio.data.link }}" class="button">{{ buttontext }}</a></li>
 								</ul>
@@ -33,7 +32,10 @@ aboutme: "I have had a long career in the animation field, and have worked on so
 {% endblock content %}
 {% block form %}
 						<h2>Get in touch</h2>
-						<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+						<p>
+                        {{ content | safe }}
+                        Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.
+                        </p>
 						<div class="split style1">
 							<section>
 								<form method="post" action="#">
