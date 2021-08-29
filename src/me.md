@@ -1,6 +1,5 @@
 ---
-layout: "/layouts/simple.njk"
-title: Me
+layout: "base.njk"
 ---
 
 <span class="image fit"><img src="/assets/images/pic04.jpg" alt="" /></span>
