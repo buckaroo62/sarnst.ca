@@ -3,7 +3,7 @@ layout: "altbase.njk"
 title: Storyboarding
 ---
 <video width="500" height="300" controls>
-    <source src="/assets/images/videos/chevy_02v2.m4v" type="video/m4v">
+    <source src="/assets/images/videos/chevy_02v2.m4v" type="video/mp4">
     Your browser does not support the video tag
 </video>
 
