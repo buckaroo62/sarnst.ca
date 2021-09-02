@@ -12,19 +12,12 @@ sidebar:
   - url: one
     text: "Who I Am"
   - url: two
-    text: "What I like to do"
+    text: "What I Love"
   - url: three
     text: "Get in touch"
 buttontext: "Details"
 ---
 {% extends "base.njk" %}
-{% block precontent %}
-								<h2>Who I am</h2>
-
-Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.
-
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.
-{% endblock precontent %}
 {% block content %}
     {% for portfolio in collections.portfolios %}
 							<section>
@@ -37,60 +30,3 @@ Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venen
 							</section>
     {% endfor %}
 {% endblock content %}
-{% block form %}
-						<h2>Get in touch</h2>
-						<p>
-                        {{ content | safe }}
-                        Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.
-                        </p>
-						<div class="split style1">
-							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="5"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><a href="" class="button submit">Send Message</a></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<ul class="contact">
-									<li>
-										<h3>Address</h3>
-										<span>{{ street }}</br>
-										{{ city }}</br>
-										{{ country }}
-										</span>
-									</li>
-									<li>
-										<h3>Email</h3>
-										<a href="#">{{ email }}</a>
-									</li>
-									<li>
-										<h3>Phone</h3>
-										<span>{{ phone }}</span>
-									</li>
-									<li>
-										<h3>Social</h3>
-										<ul class="icons">
-											<li><a href="https://www.facebook.com/sheldon.arnst" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-											<li><a href="https://www.imdb.com/name/nm0036776/" target="_blank" class="icon brands fa-imdb"><span class="label">IMDB</span></a></li>
-											<li><a href="https://www.linkedin.com/in/sheldon-arnst-89008a1/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-										</ul>
-									</li>
-								</ul>
-							</section>
-						</div>
-{% endblock form %}

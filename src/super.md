@@ -8,7 +8,7 @@ title: Supervising and Animation Directing
     Your browser does not support the video tag
 </video>
 
-These are some of the shows that I have been involved with as an Overseas Animation Supervisor, Overseas Layout Supervisor or Animation Director. For a complete list, ask to see my resume. 
+This is a selection of some of the shows that I have been involved with as an Overseas Animation Supervisor, Overseas Layout Supervisor or Animation Director. For a complete list, ask to see my resume. 
 
 They go back pretty far in time! Am I that old? Sigh...
 
