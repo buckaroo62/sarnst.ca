@@ -10,7 +10,7 @@ startcode: "whenReady()"
 I program in C, C++, Python, PHP, Javascript and a number of languages that are long forgotten.
 This is just an example of a little "toy" that I wrote for fun. A tesseract, is to a cube, as a cube is to a square. It is a fundamental 4 dimensional piece of geometry. Then, I set it to rotate on all of the six axes that it has. It's interesting, I think, because while it appears to be a cube within a cube, all of the sides are the same length! They appear to grow and shrink as they get closer to you, just like a cube does, but it looks inside out.
 
-If you are interested, I have placed the code for it below.
+If you are interested, I have placed the code for it below. I didn't use WebGl, because I was playing around with writing my own 
 
 ```javascript
 // A simple tesseract
