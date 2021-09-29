@@ -7,6 +7,6 @@ title: Old Timey 2D Animation
     Your browser does not support the video tag
 </video>
 
-This is a film that I worked on for the great Director, Jay Falconer, back in the nineties. I have just added my scenes, but I encourage you to check out the whole film on youtube. 
+This is a film that I worked on for the great Director, Jay Falconer, back in the nineties. I have just added my scenes, but I encourage you to check out the whole film on youtube. https://www.youtube.com/watch?v=ae4gWxd1IL4
 
 I have animated on various commercials and films, far too many to mention here (or even remember). I most recently did some animation for Geronimo Stilton, and "Les Daltons".

@@ -1,15 +1,21 @@
 {
   "name": "sarnst",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sheldon Arnst Website",
   "main": ".eleventy.js",
   "scripts": {
+    "dev": "run-p dev:*",
+    "dev:11ty": "eleventy --serve --quiet",
+    "build": "run-s build:*",
+    "build:11ty": "eleventy",
+    "deploy:aws": "aws s3 sync public s3://sarnst.com --size-only --exclude '.git/*' && aws cloudfront create-invalidation --distribution-id E3QO4K8CP9AEG9 --paths '/*'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^0.12.1",
+    "npm-run-all": "^4.1.5"
   }
 }
